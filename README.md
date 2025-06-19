@@ -17,7 +17,9 @@ sudo firectl --kernel=output/images/vmlinux \
 Note: we need to remove the `noapic` parameter, is only valid for the AWS kernel
 
 `[    0.000000] Linux version 6.12.33 ...`
+
 `[    0.735274] VFS: Mounted root (ext4 filesystem) ...`
+
 `[    0.769825] Run /sbin/init as init process`
 
 ## qemu-system
@@ -35,5 +37,7 @@ qemu-system-x86_64 -kernel output/images/vmlinux \
 Note: use virtio for file/network and random, replace PS/2 emulation with virtio
 
 `[    0.000000] Linux version 6.12.33 ...`
+
 `[    0.843564] VFS: Mounted root (ext4 filesystem) ...`
+
 `[    0.865686] Run /sbin/init as init process`
