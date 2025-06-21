@@ -28,7 +28,7 @@ Note: we need to remove the `noapic` parameter, is only valid for the AWS kernel
 qemu-system-x86_64 -kernel output/images/vmlinux \
                    -drive file=output/images/rootfs.ext4,if=virtio,format=raw \
                    -append "rootwait root=/dev/vda console=tty1 console=ttyS0" \
-                   -net nic,model=virtio -net user -device virtio-rng \
+                   -device virtio-rng \
                    -serial stdio -display none -audiodev none,id=none \
                    -device virtio-mouse -device virtio-keyboard \
                    -machine q35 -m 512M -accel kvm -cpu host
