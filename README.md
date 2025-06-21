@@ -1,4 +1,4 @@
-# firecracker-buildroot
+# microvm-buildroot
 
 Some files for making a custom `vmlinux` and `rootfs.ext4` with buildroot.
 
