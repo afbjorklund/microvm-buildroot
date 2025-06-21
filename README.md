@@ -4,6 +4,8 @@ Some files for making a custom `vmlinux` and `rootfs.ext4` with buildroot.
 
 For now it is just using the default kernel config and standard packages.
 
+For this setup, we also want to run `sshd` and we want to run `containerd`.
+
 ![graph size](graph-size.png)
 
 ## firecracker
