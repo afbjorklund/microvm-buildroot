@@ -45,3 +45,26 @@ Note: use virtio for file/network and random, replace PS/2 emulation with virtio
 `[    0.843564] VFS: Mounted root (ext4 filesystem) ...`
 
 `[    0.865686] Run /sbin/init as init process`
+
+## virtualization
+
+```shell
+vfkit --kernel output/images/vmlinux.uncompressed --initrd="" \
+      --device virtio-blk,path=output/images/rootfs.ext4
+      --kernel-cmdline="dev/vda console=hvc0" \
+      --memory 512
+```
+
+Note: need better method to provide an uncompressed kernel and mandatory initrd
+
+## qemu-system
+
+```shell
+qemu-system-aarch64 -kernel output/images/vmlinux \
+                   -drive file=output/images/rootfs.ext4,if=virtio,format=raw \
+                   -append "rootwait root=/dev/vda console=tty1 console=ttyS0" \
+                   -device virtio-rng \
+                   -serial stdio -display none -audiodev none,id=none \
+                   -device virtio-mouse -device virtio-keyboard \
+                   -machine virt -m 512M -accel kvm -cpu host
+```
