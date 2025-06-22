@@ -61,10 +61,10 @@ Note: need better method to provide an uncompressed kernel and mandatory initrd
 
 ```shell
 qemu-system-aarch64 -kernel output/images/vmlinux \
-                   -drive file=output/images/rootfs.ext4,if=virtio,format=raw \
-                   -append "rootwait root=/dev/vda console=tty1 console=ttyS0" \
-                   -device virtio-rng \
-                   -serial stdio -display none -audiodev none,id=none \
-                   -device virtio-mouse -device virtio-keyboard \
-                   -machine virt -m 512M -accel kvm -cpu host
+                    -drive file=output/images/rootfs.ext4,if=virtio,format=raw \
+                    -append "rootwait root=/dev/vda console=tty1 console=ttyS0" \
+                    -device virtio-rng \
+                    -serial stdio -display none -audiodev none,id=none \
+                    -device virtio-mouse -device virtio-keyboard \
+                    -machine virt -m 512M -accel kvm -cpu host
 ```
