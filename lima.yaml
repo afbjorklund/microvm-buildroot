@@ -1,0 +1,10 @@
+plain: true
+arch: x86_64
+firmware:
+  legacyBIOS: true
+
+images:
+  - location: output/images/rootfs.ext4
+    kernel:
+      location: output/images/vmlinux
+      cmdline: "root=/dev/vda console=ttyS0"
